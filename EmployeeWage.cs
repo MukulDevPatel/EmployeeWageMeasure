@@ -8,15 +8,15 @@ namespace EmployeeWage
 {
     public class EmployeeWage
     {
-        public const int IS_PART_TIME = 1, IS_FULL_TIME = 2, EMP_RATE_PER_HOUR = 20, TOTAL_WORKING_DAYS = 20, TOTAL_WORKING_HRS = 100;
-        public void Mesurement()
+        public const int IS_PART_TIME = 1, IS_FULL_TIME = 2;
+        public int Mesurement(string company, int empRatePerHour,int numOfWorkingDays, int totaHours)
         {
 
             //Varibles
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 
             //Compute
-            while(totalEmpHrs <= TOTAL_WORKING_HRS && totalWorkingDays < TOTAL_WORKING_DAYS)
+            while(totalEmpHrs <= totaHours && totalWorkingDays < numOfWorkingDays)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -36,8 +36,9 @@ namespace EmployeeWage
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day: " + totalWorkingDays + "Emp Hrs: " + empHrs);
             }
-            int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Total Emp wage: " + totalEmpWage);
+            int totalEmpWage = totalEmpHrs * empRatePerHour;
+            Console.WriteLine("Total Emp wage for company: " + company+ " is: " + totalEmpWage);
+            return totalEmpWage;
         }
     }
 }
