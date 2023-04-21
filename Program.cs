@@ -6,13 +6,10 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-
-            EmployeeWage dMart = new EmployeeWage("DMart", 20, 20, 100);
-            dMart.Mesurement();
-            Console.WriteLine(dMart.toString());
-            EmployeeWage tata = new EmployeeWage("TATA", 20, 10, 100);
-            tata.Mesurement();
-            Console.WriteLine(tata.toString());
+            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
+            empWageBuilder.addCompanyEmpWage("DMart", 2000, 26, 100);
+            empWageBuilder.addCompanyEmpWage("TATA", 2100, 24, 100);
+            empWageBuilder.computeEmpWage();
         }
     }
 }
